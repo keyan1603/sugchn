@@ -339,13 +339,19 @@
         .slice(0,3);
       
       webinarGrid.innerHTML = completed.map(w => {
-        const speakersStr = (w.speakers || []).map(s => typeof s === 'object' ? s.name : s).join(', ');
+        const speakersHtml = (w.speakers || []).map(s => {
+          const name = typeof s === 'object' ? s.name : s;
+          const url  = typeof s === 'object' ? s.linkedin : null;
+          return url
+            ? `<a href="${url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">${name}</a>`
+            : name;
+        }).join(', ');
         return `
           <div class="webinar-card">
             <div class="webinar-tags">${(w.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}</div>
             <h3>${w.title}</h3>
             <div class="webinar-meta">
-              ${speakersStr ? `<span>🎤 ${speakersStr}</span>` : ''}
+              ${speakersHtml ? `<span>🎤 ${speakersHtml}</span>` : ''}
               <span>📅 ${formatDate(w.date)}</span>
             </div>
             <p>${w.description.substring(0, 120)}...</p>
@@ -357,7 +363,13 @@
 
     function renderUpcomingCard(item) {
       const isEvent = item.type === 'event';
-      const speakersStr = isEvent ? '' : (item.speakers || []).map(s => typeof s === 'object' ? s.name : s).join(', ');
+      const speakersHtml = (item.speakers || []).map(s => {
+        const name = typeof s === 'object' ? s.name : s;
+        const url  = typeof s === 'object' ? s.linkedin : null;
+        return url
+          ? `<a href="${url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">${name}</a>`
+          : name;
+      }).join(', ');
       return `
         <div class="upcoming-card upcoming-card--${item.type}">
           <div class="upcoming-card-type">${isEvent ? '📍 In-Person / Online Event' : '🖥 Live Webinar'}</div>
@@ -365,7 +377,9 @@
           <h3>${item.title}</h3>
           <p>${item.description.substring(0, 130)}...</p>
           <div class="upcoming-card-meta">
-            ${isEvent ? `<span>🕐 ${item.time}</span><span>📍 ${item.venue}</span>` : `<span>🕐 ${item.time}</span>${speakersStr ? `<span>🎤 ${speakersStr}</span>` : ''}`}
+            ${isEvent
+              ? `<span>🕐 ${item.time}</span><span>📍 ${item.venue}</span>${speakersHtml ? `<span>🎤 ${speakersHtml}</span>` : ''}`
+              : `<span>🕐 ${item.time}</span>${speakersHtml ? `<span>🎤 ${speakersHtml}</span>` : ''}`}
           </div>
           <div class="upcoming-card-tags">${(item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
           ${item.registerLink ? `<a href="${item.registerLink}" target="_blank" class="btn btn-primary">Register →</a>` : ''}
