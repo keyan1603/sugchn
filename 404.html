@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Not Found – SUG Chennai</title>
+  <link rel="icon" href="images/favicon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .notfound-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .notfound-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/tech/hero-tech.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+    }
+    .notfound-content {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      padding: 40px 24px;
+    }
+    .notfound-code {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 18vw, 10rem);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.7;
+    }
+    .notfound-content h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 16px;
+    }
+    .notfound-content p {
+      margin-bottom: 36px;
+      font-size: 1.05rem;
+    }
+    .notfound-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="SUG Chennai" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+        <span class="logo-text" style="display:none">SUG<span class="accent">.</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="webinar.html">Webinars</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="webinar.html">Webinars</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="notfound-page">
+    <div class="notfound-bg"></div>
+    <div class="notfound-content animate-in">
+      <div class="notfound-code">404</div>
+      <h1>Page not found</h1>
+      <p>This page seems to have gone offline. It may have moved, or the URL might be incorrect.</p>
+      <div class="notfound-links">
+        <a href="index.html" class="btn btn-primary btn-large">← Back to Home</a>
+        <a href="events.html" class="btn btn-ghost btn-large">View Events</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

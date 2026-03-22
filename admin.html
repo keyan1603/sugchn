@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin – SUG Chennai</title>
+  <link rel="icon" href="images/favicon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .admin-container { max-width: 860px; margin: 0 auto; padding: 0 24px 120px; }
+    .gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .gate-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+    .gate-card .lock { font-size: 2.5rem; margin-bottom: 20px; }
+    .gate-card h1 { font-size: 1.6rem; margin-bottom: 8px; }
+    .gate-card p { margin-bottom: 28px; font-size: 0.9rem; }
+    .gate-card input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-family: var(--font-body);
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: 0.15em;
+    }
+    .gate-card input:focus { outline: none; border-color: var(--accent); }
+    .error-msg { color: var(--accent); font-size: 0.85rem; margin-top: 12px; display: none; }
+
+    /* Admin UI */
+    .admin-ui { display: none; }
+    .admin-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .admin-header h2 { font-size: 1.1rem; color: var(--text); font-family: var(--font-body); font-weight: 600; }
+    .admin-tabs {
+      display: flex;
+      gap: 4px;
+      margin: 40px 0 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .admin-tab {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all var(--transition);
+    }
+    .admin-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .admin-tab:hover { color: var(--text); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .success-toast {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #22c55e;
+      color: #000;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transform: translateY(120%);
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+    .success-toast.show { transform: translateY(0); }
+
+    .admin-list { margin-top: 40px; }
+    .admin-list h3 { font-size: 1.1rem; margin-bottom: 20px; color: var(--text); }
+    .admin-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .admin-item-info h4 { font-size: 0.95rem; color: var(--text); margin-bottom: 4px; font-family: var(--font-body); }
+    .admin-item-info span { font-size: 0.8rem; color: var(--text-faint); }
+    .admin-item-actions { display: flex; gap: 8px; flex-shrink: 0; align-items: center; }
+    .btn-danger { background: rgba(230,48,39,0.15); color: var(--accent); border: 1px solid rgba(230,48,39,0.3); padding: 8px 16px; font-size: 0.9rem; }
+    .btn-danger:hover { background: var(--accent); color: #fff; }
+    
+    .status-select {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .status-select:focus { outline: none; border-color: var(--accent); }
+    .status-select:hover { border-color: var(--accent); }
+
+    .code-output {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: pre-wrap;
+      max-height: 400px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    .hint-box {
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .hint-box strong { color: var(--text); }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.85rem; color: var(--text); margin-bottom: 8px; font-weight: 500; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .admin-form { margin-bottom: 40px; }
+    .admin-form h3 { font-size: 1.2rem; margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+<!-- GATE -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <div class="lock">🔐</div>
+    <h1>Admin Access</h1>
+    <p>Enter the admin passphrase to manage events and webinars.</p>
+    <input type="password" id="passphraseInput" placeholder="Enter passphrase" autocomplete="off"/>
+    <button class="btn btn-primary" style="width:100%;" onclick="checkPassphrase()">Enter Admin →</button>
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+</div>
+
+<!-- ADMIN UI -->
+<div class="admin-ui" id="adminUI">
+  <div class="admin-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="index.html">
+        <img src="images/logo.png" alt="SUG Chennai" style="height:36px;" onerror="this.style.display='none'"/>
+      </a>
+      <h2>SUG Chennai Admin</h2>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <span style="font-size:0.8rem;color:var(--text-faint);">Session active</span>
+      <button class="btn btn-sm btn-ghost" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="admin-container" style="padding-top:0;">
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchTab('events')">📅 Events</button>
+      <button class="admin-tab" onclick="switchTab('webinars')">🖥 Webinars</button>
+      <button class="admin-tab" onclick="switchTab('export')">📋 Export Data</button>
+    </div>
+
+    <!-- EVENTS TAB -->
+    <div class="tab-panel active" id="tab-events">
+      <div class="hint-box">
+        <strong>How to add an event:</strong> Fill out the form below and click "Add Event". The event will appear in the list below. Once done, use the <strong>Export Data</strong> tab to get the updated data.js file and replace it in your GitHub repo.<br/><br/>
+        <strong>Made a mistake?</strong> Click the <strong>🔄 Clear Form</strong> button to reset all fields, or click the <strong>Delete</strong> button next to any incorrect entry in the list below to remove it before exporting.
+      </div>
+
+      <div class="admin-form">
+        <h3>Add New Event</h3>
+        <div class="form-group">
+          <label>Event Title *</label>
+          <input type="text" id="ev-title" placeholder="e.g. SUG Chennai Meetup #9 – XM Cloud"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date *</label>
+            <input type="date" id="ev-date"/>
+          </div>
+          <div class="form-group">
+            <label>Status *</label>
+            <select id="ev-status">
+              <option value="upcoming">Upcoming</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Time</label>
+            <input type="text" id="ev-time" placeholder="e.g. 10:00 AM – 1:00 PM IST"/>
+          </div>
+          <div class="form-group">
+            <label>Venue</label>
+            <input type="text" id="ev-venue" placeholder="e.g. Online (Teams) or Venue Name, Chennai"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description *</label>
+          <textarea id="ev-desc" placeholder="Describe the event, topics covered, format, etc."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Speaker(s) (JSON format)</label>
+            <input type="text" id="ev-speakers" placeholder='[{"name":"John Doe","linkedin":"https://linkedin.com/in/john"}]'/>
+            <small style="color: var(--text-faint); font-size: 0.75rem; margin-top: 4px; display: block;">✓ Single: [{"name":"John","linkedin":"https://..."}]<br/>✓ Multiple: [{"name":"John","linkedin":"..."},{"name":"Jane","linkedin":"..."}]</small>
+          </div>
+          <div class="form-group">
+            <label>Tags (comma-separated)</label>
+            <input type="text" id="ev-tags" placeholder="e.g. XM Cloud, SaaS, Composable"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Registration Link</label>
+          <input type="url" id="ev-register" placeholder="https://forms.gle/..."/>
+        </div>
+        <button class="btn btn-primary" onclick="addEvent()">+ Add Event</button>
+        <button class="btn btn-ghost" onclick="resetEventForm()" style="margin-left: 12px;">🔄 Clear Form</button>
+      </div>
+
+      <div class="admin-list">
+        <h3>Current Events (<span id="eventCount">0</span>)</h3>
+        <div id="eventsList"></div>
+      </div>
+    </div>
+
+    <!-- WEBINARS TAB -->
+    <div class="tab-panel" id="tab-webinars">
+      <div class="hint-box">
+        <strong>How to add a webinar:</strong> Fill out the form and click "Add Webinar". Upcoming or TBD webinars can have their status changed. Then export the updated data from the <strong>Export Data</strong> tab and update your repo.<br/><br/>
+        <strong>Made a mistake?</strong> Click the <strong>🔄 Clear Form</strong> button to reset all fields, or click the <strong>Delete</strong> button next to any incorrect entry in the list below to remove it before exporting.
+      </div>
+
+      <div class="admin-form">
+        <h3>Add New Webinar</h3>
+        <div class="form-group">
+          <label>Webinar Title *</label>
+          <input type="text" id="wb-title" placeholder="e.g. Sitecore XM Cloud: A Complete Overview"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date *</label>
+            <input type="date" id="wb-date"/>
+          </div>
+          <div class="form-group">
+            <label>Status *</label>
+            <select id="wb-status">
+              <option value="upcoming">Upcoming</option>
+              <option value="completed">Completed</option>
+              <option value="tbd">TBD</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Time</label>
+            <input type="text" id="wb-time" placeholder="e.g. 6:00 PM IST"/>
+          </div>
+          <div class="form-group">
+            <label>Duration</label>
+            <input type="text" id="wb-duration" placeholder="e.g. 45 mins"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>YouTube ID (11 chars)</label>
+            <input type="text" id="wb-youtubeId" placeholder="e.g. 9O_8QBZqpO0"/>
+          </div>
+          <div class="form-group">
+            <label>Tags (comma-separated)</label>
+            <input type="text" id="wb-tags" placeholder="e.g. XM Cloud, Composable"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Speaker Name(s) (JSON format) *</label>
+            <input type="text" id="wb-speakers" placeholder='[{"name":"John Doe","linkedin":"https://linkedin.com/in/john"}]'/>
+            <small style="color: var(--text-faint); font-size: 0.75rem; margin-top: 4px; display: block;">Format: [{"name":"FirstName LastName","linkedin":"https://linkedin.com/in/username"}]</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description *</label>
+          <textarea id="wb-desc" placeholder="Describe what will be covered in this webinar."></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="addWebinar()">+ Add Webinar</button>
+        <button class="btn btn-ghost" onclick="resetWebinarForm()" style="margin-left: 12px;">🔄 Clear Form</button>
+      </div>
+
+      <div class="admin-list">
+        <h3>Current Webinars (<span id="webinarCount">0</span>)</h3>
+        <div id="webinarsList"></div>
+      </div>
+    </div>
+
+    <!-- EXPORT TAB -->
+    <div class="tab-panel" id="tab-export">
+      <div class="hint-box">
+        <strong>How to update the live site:</strong><br/>
+        1. Click <strong>Generate data.js</strong> below to see the updated data file content.<br/>
+        2. Copy the entire content.<br/>
+        3. Go to your <strong>GitHub repository</strong>, open <code>data.js</code>, and paste to replace it.<br/>
+        4. Commit the change — GitHub Pages will automatically update the live site within 1-2 minutes.<br/><br/>
+        <strong>Clear New Items:</strong> Click <strong>🔄 Clear New Items (Restore Original)</strong> to remove all newly added records and go back to the original 29 events/webinars. This lets you start fresh to add new records again.<br/><br/>
+        <strong>Tip:</strong> Bookmark this admin page URL for quick access.
+      </div>
+      <button class="btn btn-primary" onclick="generateExport()" style="margin-bottom:24px;">⬇ Generate data.js Content</button>
+      <button class="btn btn-ghost" onclick="copyToClipboard()" style="margin-bottom:24px;margin-left:12px;">📋 Copy to Clipboard</button>
+      <button class="btn btn-danger" onclick="resetAllData()" style="margin-bottom:24px;margin-left:12px;">🔄 Clear New Items (Restore Original)</button>
+      <pre class="code-output" id="exportOutput">Click "Generate data.js Content" to preview the file...</pre>
+    </div>
+  </div>
+</div>
+
+<div class="success-toast" id="successToast">✓ Saved successfully!</div>
+
+<script src="data.js"></script>
+<script>
+  // ─────────────────────────────────────────────────────────────────────
+  // SECURITY: Only a SHA-256 hash of the passphrase is stored here.
+  // The actual passphrase is NEVER in this file.
+  //
+
+  //
+  // TO CHANGE YOUR PASSPHRASE:
+  //   1. Go to https://emn178.github.io/online-tools/sha256.html
+  //   2. Type your new passphrase and copy the hash
+  //   3. Replace PASSPHRASE_HASH value below with the new hash
+  //   4. Commit — your passphrase is never exposed in source code
+  // ─────────────────────────────────────────────────────────────────────
+  const PASSPHRASE_HASH = 'cb98a7c883e16559fb112bb174c9fd30f75a6def9e7132103593d721f198c4f6';
+
+  // Rate limiting: max 5 attempts, then 15-minute lockout
+  const MAX_ATTEMPTS = 5;
+  const LOCKOUT_MS   = 15 * 60 * 1000;
+
+  function getLockState() {
+    try {
+      const raw = localStorage.getItem('sug_admin_lock');
+      return raw ? JSON.parse(raw) : { attempts: 0, lockedUntil: 0 };
+    } catch { return { attempts: 0, lockedUntil: 0 }; }
+  }
+  function saveLockState(s) { localStorage.setItem('sug_admin_lock', JSON.stringify(s)); }
+  function resetLockState() { localStorage.removeItem('sug_admin_lock'); }
+
+  // SHA-256 via Web Crypto API — built into every modern browser, no library needed
+  async function sha256(message) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(message));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  async function checkPassphrase() {
+    const lock = getLockState();
+    const now  = Date.now();
+
+    // Enforce lockout
+    if (lock.lockedUntil > now) {
+      const mins = Math.ceil((lock.lockedUntil - now) / 60000);
+      showGateError(`Too many failed attempts. Try again in ${mins} minute${mins > 1 ? 's' : ''}.`);
+      return;
+    }
+
+    const input = document.getElementById('passphraseInput').value;
+    if (!input) return;
+
+    const btn = document.querySelector('#gate .btn-primary');
+    btn.disabled = true;
+    btn.textContent = 'Verifying…';
+
+    const hash = await sha256(input);
+
+    // Constant-time comparison — prevents timing attacks
+    let match = hash.length === PASSPHRASE_HASH.length;
+    for (let i = 0; i < PASSPHRASE_HASH.length; i++) {
+      if (hash[i] !== PASSPHRASE_HASH[i]) match = false;
+    }
+
+    if (match) {
+      resetLockState();
+      sessionStorage.setItem('admin_auth', '1');
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('adminUI').style.display = 'block';
+      renderLists();
+    } else {
+      lock.attempts = (lock.lockedUntil > now ? 0 : lock.attempts) + 1;
+      const remaining = MAX_ATTEMPTS - lock.attempts;
+      if (lock.attempts >= MAX_ATTEMPTS) {
+        lock.lockedUntil = now + LOCKOUT_MS;
+        saveLockState(lock);
+        showGateError('Too many failed attempts. Locked for 15 minutes.');
+      } else {
+        saveLockState(lock);
+        showGateError(`Incorrect passphrase. ${remaining} attempt${remaining !== 1 ? 's' : ''} remaining.`);
+      }
+      document.getElementById('passphraseInput').value = '';
+      btn.disabled = false;
+      btn.textContent = 'Enter Admin →';
+    }
+  }
+
+  function showGateError(msg) {
+    const el = document.getElementById('errorMsg');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  document.getElementById('passphraseInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassphrase();
+  });
+
+  // Show lockout message on page load if still locked
+  (function() {
+    const lock = getLockState();
+    if (lock.lockedUntil > Date.now()) {
+      const mins = Math.ceil((lock.lockedUntil - Date.now()) / 60000);
+      showGateError(`Too many failed attempts. Try again in ${mins} minute${mins > 1 ? 's' : ''}.`);
+      document.getElementById('passphraseInput').disabled = true;
+      document.querySelector('#gate .btn-primary').disabled = true;
+      setTimeout(() => {
+        document.getElementById('passphraseInput').disabled = false;
+        document.querySelector('#gate .btn-primary').disabled = false;
+        document.getElementById('errorMsg').style.display = 'none';
+        resetLockState();
+      }, lock.lockedUntil - Date.now());
+    }
+  })();
+
+  // In-memory store (session only — changes must be exported to data.js)
+  let originalEvents = JSON.parse(JSON.stringify(SUGData.events));
+  let originalWebinars = JSON.parse(JSON.stringify(SUGData.webinars));
+  let adminEvents = JSON.parse(sessionStorage.getItem('admin_events') || 'null') || [...SUGData.events];
+  let adminWebinars = JSON.parse(sessionStorage.getItem('admin_webinars') || 'null') || [...SUGData.webinars];
+
+  // Auto-restore session if already authenticated in this tab session
+  if (sessionStorage.getItem('admin_auth') === '1') {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('adminUI').style.display = 'block';
+    renderLists();
+  }
+
+  function logout() {
+    sessionStorage.removeItem('admin_auth');
+    location.reload();
+  }
+
+  function switchTab(tab) {
+    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+  }
+
+  function generateId(prefix) {
+    return prefix + Date.now().toString(36);
+  }
+
+  function addEvent() {
+    const title = document.getElementById('ev-title').value.trim();
+    const date = document.getElementById('ev-date').value;
+    const desc = document.getElementById('ev-desc').value.trim();
+    if (!title || !date || !desc) { alert('Please fill in Title, Date, and Description.'); return; }
+
+    // Parse speakers from JSON
+    let speakers = [];
+    const speakersInput = document.getElementById('ev-speakers').value.trim();
+    if (speakersInput) {
+      try {
+        // Try to parse as JSON
+        const parsed = JSON.parse(speakersInput);
+        // Ensure it's an array
+        if (Array.isArray(parsed)) {
+          speakers = parsed;
+        } else {
+          throw new Error('Must be an array');
+        }
+      } catch (e) {
+        alert('Speakers must be in JSON format: [{"name":"John","linkedin":"https://..."}]'); 
+        return;
+      }
+    }
+
+    const newEvent = {
+      id: generateId('e'),
+      title,
+      date,
+      time: document.getElementById('ev-time').value.trim() || 'TBD',
+      venue: document.getElementById('ev-venue').value.trim() || 'Online',
+      description: desc,
+      registerLink: document.getElementById('ev-register').value.trim(),
+      speakers: speakers,
+      tags: document.getElementById('ev-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+      status: document.getElementById('ev-status').value
+    };
+
+    adminEvents.unshift(newEvent);
+    sessionStorage.setItem('admin_events', JSON.stringify(adminEvents));
+    renderLists();
+    clearForm(['ev-title','ev-date','ev-time','ev-venue','ev-desc','ev-register','ev-speakers','ev-tags']);
+    showToast('Event added!');
+  }
+
+  function addWebinar() {
+    const title = document.getElementById('wb-title').value.trim();
+    const date = document.getElementById('wb-date').value;
+    const desc = document.getElementById('wb-desc').value.trim();
+    const speakersInput = document.getElementById('wb-speakers').value.trim();
+    
+    if (!title || !date || !desc || !speakersInput) { 
+      alert('Please fill in Title, Date, Speakers, and Description.'); 
+      return; 
+    }
+
+    // Parse speakers from JSON - strict validation
+    let speakers = [];
+    try {
+      const parsed = JSON.parse(speakersInput);
+      // Ensure it's an array
+      if (!Array.isArray(parsed)) {
+        throw new Error('Must be an array');
+      }
+      // Validate each speaker has name
+      if (parsed.some(s => !s.name || !s.name.trim())) {
+        throw new Error('All speakers must have a name');
+      }
+      speakers = parsed;
+    } catch (e) {
+      alert('Speakers format error: ' + e.message + '\n\nCorrect format: [{"name":"John Doe","linkedin":"https://linkedin.com/in/john"}]'); 
+      return;
+    }
+
+    const newWebinar = {
+      id: generateId('w'),
+      title,
+      date,
+      time: document.getElementById('wb-time').value.trim() || 'TBD',
+      duration: document.getElementById('wb-duration').value.trim() || 'TBD',
+      youtubeId: document.getElementById('wb-youtubeId').value.trim() || 'tbd',
+      speakers: speakers,
+      description: desc,
+      tags: document.getElementById('wb-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+      status: document.getElementById('wb-status').value
+    };
+
+    adminWebinars.unshift(newWebinar);
+    sessionStorage.setItem('admin_webinars', JSON.stringify(adminWebinars));
+    renderLists();
+    clearForm(['wb-title','wb-date','wb-time','wb-duration','wb-youtubeId','wb-speakers','wb-desc','wb-tags']);
+    showToast('Webinar added!');
+  }
+
+  function updateEventStatus(id, newStatus) {
+    const event = adminEvents.find(e => e.id === id);
+    if (event) {
+      event.status = newStatus;
+      sessionStorage.setItem('admin_events', JSON.stringify(adminEvents));
+      renderLists();
+      showToast('Event status updated!');
+    }
+  }
+
+  function updateWebinarStatus(id, newStatus) {
+    const webinar = adminWebinars.find(w => w.id === id);
+    if (webinar) {
+      webinar.status = newStatus;
+      sessionStorage.setItem('admin_webinars', JSON.stringify(adminWebinars));
+      renderLists();
+      showToast('Webinar status updated!');
+    }
+  }
+
+  function deleteEvent(id) {
+    if (!confirm('Delete this event?')) return;
+    adminEvents = adminEvents.filter(e => e.id !== id);
+    sessionStorage.setItem('admin_events', JSON.stringify(adminEvents));
+    renderLists();
+    showToast('Event deleted.');
+  }
+
+  function deleteWebinar(id) {
+    if (!confirm('Delete this webinar?')) return;
+    adminWebinars = adminWebinars.filter(w => w.id !== id);
+    sessionStorage.setItem('admin_webinars', JSON.stringify(adminWebinars));
+    renderLists();
+    showToast('Webinar deleted.');
+  }
+
+  function renderLists() {
+    // Events
+    document.getElementById('eventCount').textContent = adminEvents.length;
+    document.getElementById('eventsList').innerHTML = adminEvents.map(e => {
+      const speakersStr = (e.speakers || []).map(s => typeof s === 'object' ? s.name : s).join(', ');
+      const canChangeStatus = e.status === 'upcoming' || e.status === 'tbd';
+      
+      return `
+        <div class="admin-item">
+          <div class="admin-item-info">
+            <h4>${e.title}</h4>
+            <span>${new Date(e.date).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})} · ${speakersStr ? '🎤 ' + speakersStr : ''} · ${e.venue || 'TBD'}</span>
+          </div>
+          <div class="admin-item-actions">
+            <select class="status-select" onchange="updateEventStatus('${e.id}', this.value)" style="opacity: ${canChangeStatus ? '1' : '0.5'}" ${canChangeStatus ? '' : 'disabled'}>
+              <option value="upcoming" ${e.status === 'upcoming' ? 'selected' : ''}>🟢 Upcoming</option>
+              <option value="completed" ${e.status === 'completed' ? 'selected' : ''}>✓ Completed</option>
+              <option value="tbd" ${e.status === 'tbd' ? 'selected' : ''}>❓ TBD</option>
+            </select>
+            <button class="btn btn-sm btn-danger" onclick="deleteEvent('${e.id}')">Delete</button>
+          </div>
+        </div>
+      `;
+    }).join('') || '<p style="color:var(--text-faint);text-align:center;padding:20px;">No events yet.</p>';
+
+    // Webinars
+    document.getElementById('webinarCount').textContent = adminWebinars.length;
+    document.getElementById('webinarsList').innerHTML = adminWebinars.map(w => {
+      const speakersStr = (w.speakers || []).map(s => typeof s === 'object' ? s.name : s).join(', ');
+      const canChangeStatus = w.status === 'upcoming' || w.status === 'tbd';
+      
+      return `
+        <div class="admin-item">
+          <div class="admin-item-info">
+            <h4>${w.title}</h4>
+            <span>${new Date(w.date).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})} · 🎤 ${speakersStr} · ${w.youtubeId && w.youtubeId.length === 11 ? '📹 Recorded' : '🎬 No Recording'}</span>
+          </div>
+          <div class="admin-item-actions">
+            <select class="status-select" onchange="updateWebinarStatus('${w.id}', this.value)" style="opacity: ${canChangeStatus ? '1' : '0.5'}" ${canChangeStatus ? '' : 'disabled'}>
+              <option value="upcoming" ${w.status === 'upcoming' ? 'selected' : ''}>🟢 Upcoming</option>
+              <option value="completed" ${w.status === 'completed' ? 'selected' : ''}>✓ Completed</option>
+              <option value="tbd" ${w.status === 'tbd' ? 'selected' : ''}>❓ TBD</option>
+            </select>
+            <button class="btn btn-sm btn-danger" onclick="deleteWebinar('${w.id}')">Delete</button>
+          </div>
+        </div>
+      `;
+    }).join('') || '<p style="color:var(--text-faint);text-align:center;padding:20px;">No webinars yet.</p>';
+  }
+
+  function generateExport() {
+    const output = `// SUG Chennai – Central Data Store
+// GENERATED: ${new Date().toISOString()}
+// Edit via admin.html or modify directly
+
+const SUGData = {
+  events: ${JSON.stringify(adminEvents, null, 2)},
+
+  webinars: ${JSON.stringify(adminWebinars, null, 2)}
+};
+
+// Make available globally
+if (typeof module !== 'undefined') module.exports = SUGData;`;
+    document.getElementById('exportOutput').textContent = output;
+    showToast('data.js content generated!');
+  }
+
+  function resetAllData() {
+    if (!confirm('⚠️ This will remove ALL newly added items and restore the original 29 events/webinars. Continue?')) return;
+    if (!confirm('⚠️ Are you sure? This will DELETE all your new additions and keep only the original data.')) return;
+    
+    adminEvents = JSON.parse(JSON.stringify(originalEvents));
+    adminWebinars = JSON.parse(JSON.stringify(originalWebinars));
+    sessionStorage.setItem('admin_events', JSON.stringify(adminEvents));
+    sessionStorage.setItem('admin_webinars', JSON.stringify(adminWebinars));
+    renderLists();
+    showToast('Reset to original data! New items removed.');
+  }
+
+  function copyToClipboard() {
+    const text = document.getElementById('exportOutput').textContent;
+    if (text.startsWith('Click')) { alert('Please click Generate first.'); return; }
+    navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!'));
+  }
+
+  function clearForm(ids) {
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+  }
+
+  function resetEventForm() {
+    clearForm(['ev-title','ev-date','ev-time','ev-venue','ev-desc','ev-register','ev-speakers','ev-tags','ev-status']);
+    document.getElementById('ev-status').value = 'upcoming'; // Reset to default
+    showToast('Event form cleared!');
+  }
+
+  function resetWebinarForm() {
+    clearForm(['wb-title','wb-date','wb-time','wb-duration','wb-youtubeId','wb-speakers','wb-desc','wb-tags','wb-status']);
+    document.getElementById('wb-status').value = 'upcoming'; // Reset to default
+    showToast('Webinar form cleared!');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('successToast');
+    t.textContent = '✓ ' + msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+</script>
+</body>
+</html>
