@@ -894,6 +894,71 @@ const SUGData = {
       duration: "54 mins",
       status: "completed"
     }
+  ],
+
+  team: [
+    {
+      name: "Kishore Yatheendra",
+      role: "Founder",
+      title: "Delivery Director",
+      image: "images/team/kishore.jpg",
+      linkedin: "https://www.linkedin.com/in/ty-kishore-2399564/",
+      twitter: "https://twitter.com/kishore_ty"
+    },
+    {
+      name: "Mohamed Nizarudeen",
+      role: "Co-Founder",
+      title: "Sitecore MVP & Main Organizer",
+      image: "images/team/Nizarudeen.jpg",
+      linkedin: "https://www.linkedin.com/in/nizarmd2/",
+      twitter: "https://twitter.com/nizarmd2",
+      web: "https://meerannizar.wordpress.com/about-me/"
+    },
+    {
+      name: "Gopikrishna Reddy Gujjula",
+      role: "SUG Advisor",
+      title: "Sitecore MVP 2019",
+      image: "images/team/gopikrishna.jpg",
+      linkedin: "https://www.linkedin.com/in/gopigujjula/",
+      twitter: "https://twitter.com/gopigujjula"
+    },
+    {
+      name: "Debi Prasanna Bej",
+      role: "Founding Member",
+      title: "Sitecore Certified Professional",
+      image: "images/team/prasanna.jpg",
+      linkedin: "http://www.linkedin.com/in/debiprasannabej"
+    },
+    {
+      name: "Sujita Chandran",
+      role: "Core Committee Member",
+      title: "Sitecore Certified Professional",
+      image: "images/team/sujita.jpg",
+      linkedin: "https://www.linkedin.com/in/sujita-chandran-0a30803b/"
+    },
+    {
+      name: "Vinothini Durairaj",
+      role: "Member",
+      title: "Sitecore Certified Professional",
+      image: "images/team/vinothini.jpg",
+      linkedin: "https://www.linkedin.com/in/vinothini-durairaj-27a4a979/"
+    },
+    {
+      name: "Vikash Raaj",
+      role: "Committee Member",
+      title: "Sitecore Certified Professional",
+      image: "images/team/vikash_raaj.jpg",
+      linkedin: "https://www.linkedin.com/in/vikash-raaj/",
+      twitter: "https://twitter.com/VIKASHRAAJB"
+    },
+    {
+      name: "Karthikeyan Manickavasagam",
+      role: "Committee Member & Organizer",
+      title: "Sitecore Certified Professional",
+      image: "images/team/KarthikeyanManickavasagam.jpg",
+      linkedin: "https://www.linkedin.com/in/karthikeyan-manickavasagam-31661534/",
+      web: "https://yansorflow.wordpress.com/"
+    }
   ]
 };
 
