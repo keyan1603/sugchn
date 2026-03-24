@@ -3,8 +3,26 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – SUG Chennai</title>
-  <meta name="description" content="Meet the team behind Sitecore User Group Chennai."/>
+  <!-- SEO -->
+  <meta name="description" content="Meet the team behind SUG Chennai — organizers, Sitecore MVPs, and community members driving the Sitecore ecosystem in India."/>
+  <meta name="keywords" content="SUG Chennai team, Sitecore MVP India, Sitecore User Group organizers, Mohamed Nizarudeen, Kishore Yatheendra"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.sugchennai.co.in/about.html"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="SUG Chennai"/>
+  <meta property="og:url" content="https://www.sugchennai.co.in/about.html"/>
+  <meta property="og:title" content="About SUG Chennai"/>
+  <meta property="og:description" content="Meet the organizers and team behind SUG Chennai — India's active Sitecore User Group."/>
+  <meta property="og:image" content="https://www.sugchennai.co.in/images/tech/about-banner.jpg"/>
+  <meta property="og:locale" content="en_IN"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@sugchennai"/>
+  <meta name="twitter:title" content="About SUG Chennai"/>
+  <meta name="twitter:description" content="Meet the organizers and team behind SUG Chennai — India's active Sitecore User Group."/>
+  <meta name="twitter:image" content="https://www.sugchennai.co.in/images/tech/about-banner.jpg"/>
+  <title>About Us – SUG Chennai | Sitecore User Group</title>
   <link rel="icon" href="images/favicon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -268,7 +286,7 @@
         const ini = initials(name);
         return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><circle cx="80" cy="80" r="80" fill="${bg}"/><text x="80" y="80" dy=".35em" text-anchor="middle" font-family="Georgia,serif" font-size="56" fill="white">${ini}</text></svg>`)}`;
       }
-
+      
       if (!SUGData.team || SUGData.team.length === 0) {
         grid.innerHTML = '<div class="empty-state"><p>Team information coming soon.</p></div>';
         return;
