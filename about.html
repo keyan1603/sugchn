@@ -240,23 +240,6 @@
     // Update current year in footer
     document.querySelector('.current-year').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // Close menu when link is clicked
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      });
-    });
-
     // Sticky nav on scroll
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
