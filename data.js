@@ -5,6 +5,71 @@
 
 const SUGData = {
   events: [
+   {
+    id: "emn51iz8r",
+    title: "From JSS to Content SDK: Modernizing XM Cloud Development with Next.js App Router",
+    date: "2025-12-05",
+    time: "5:00 PM - 6:00 PM IST",
+    venue: "Online",
+    description: "A guide to transitioning from JSS to the Content SDK and adopting Next.js App Router for modern XM Cloud development.",
+    registerLink: "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    speakers: [
+      {
+        name: "Kamatchi Manoharan",
+        linkedin: "https://www.linkedin.com/in/kamatchi-manoharan-b3770233/"
+      }
+    ],
+    tags: [
+      "XM Cloud",
+      "Content SDK"
+    ],
+    status: "completed"
+  },
+  {
+    id: "emn51g9m4",
+    title: "Using Sitecore AI Embedded Personalization with Content SDK",
+    date: "2025-11-26",
+    time: "5:00 PM - 6:00 PM IST",
+    venue: "Online",
+    description: "An overview of leveraging Sitecore AI personalization features through the Content SDK for tailored digital experiences.",
+    registerLink: "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    speakers: [
+      {
+        name: "Varalakshmi MD",
+        linkedin: "https://www.linkedin.com/in/varalakshmi-md-sitecore/"
+      },
+      {
+        name: "Debtanu Biswas",
+        linkedin: "https://www.linkedin.com/in/debtanu-biswas-92287596/"
+      }
+    ],
+    tags: [
+      "Sitecore AI",
+      "Content SDK",
+      "AIPersonalization"
+    ],
+    status: "completed"
+  },
+  {
+    id: "emn51aihu",
+    title: "Working with Custom Fields in Sitecore XM Cloud via Marketplace App",
+    date: "2025-10-31",
+    time: "5:00 PM - 6:00 PM IST",
+    venue: "Online",
+    description: "A practical guide to creating and managing custom fields in Sitecore XM Cloud using the Marketplace App.",
+    registerLink: "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    speakers: [
+      {
+        name: "Sumit Bhatia",
+        linkedin: "https://www.linkedin.com/in/sbhatia209/"
+      }
+    ],
+    tags: [
+      "XM Cloud",
+      "Sitecore Marketplace"
+    ],
+    status: "completed"
+  },
     {
       id: 1,
       date: "2025-06-06",
@@ -414,6 +479,70 @@ const SUGData = {
   ],
 
   webinars: [
+    {
+    id: "wmn51qttj",
+    title: "From JSS to Content SDK: Modernizing XM Cloud Development with Next.js App Router",
+    date: "2025-12-05",
+    time: "5:00 PM - 6:00 PM IST",
+    duration: "41 mins",
+    youtubeId: "2GPpuFajmKk",
+    speakers: [
+      {
+        name: "Kamatchi Manoharan",
+        linkedin: "https://www.linkedin.com/in/kamatchi-manoharan-b3770233/"
+      }
+    ],
+    description: "A guide to transitioning from JSS to the Content SDK and adopting Next.js App Router for modern XM Cloud development.",
+    tags: [
+      "XM Cloud",
+      "Content SDK"
+    ],
+    status: "completed"
+  },
+  {
+    id: "wmn51oz9n",
+    title: "Using Sitecore AI Embedded Personalization with Content SDK",
+    date: "2025-11-26",
+    time: "5:00 PM - 6:00 PM IST",
+    duration: "30 mins",
+    youtubeId: "KxAc4G-aloo",
+    speakers: [
+      {
+        name: "Varalakshmi MD",
+        linkedin: "https://www.linkedin.com/in/varalakshmi-md-sitecore/"
+      },
+      {
+        name: "Debtanu Biswas",
+        linkedin: "https://www.linkedin.com/in/debtanu-biswas-92287596/"
+      }
+    ],
+    description: "An overview of leveraging Sitecore AI personalization features through the Content SDK for tailored digital experiences.",
+    tags: [
+      "Sitecore AI",
+      "Content SDK",
+      "AIPersonalization"
+    ],
+    status: "completed"
+  },
+  {
+    id: "wmn51n8ax",
+    title: "Working with Custom Fields in Sitecore XM Cloud via Marketplace App",
+    date: "2025-10-31",
+    time: "5:00 PM - 6:00 PM IST",
+    duration: "42 mins",
+    youtubeId: "ySOmu_upNKQ",
+    speakers: [
+      {
+        name: "Sumit Bhatia",
+        linkedin: "https://www.linkedin.com/in/sbhatia209/"
+      }
+    ],
+    description: "A practical guide to creating and managing custom fields in Sitecore XM Cloud using the Marketplace App.",
+    tags: [
+      "XM Cloud", "Sitecore Marketplace"
+    ],
+    status: "completed"
+  },
     {
       id: 1,
       title: "Getting Started with Sitecore Stream",
