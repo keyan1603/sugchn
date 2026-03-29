@@ -1086,7 +1086,8 @@ const SUGData = {
       title: "Sitecore Certified Professional",
       image: "images/team/KarthikeyanManickavasagam.jpg",
       linkedin: "https://www.linkedin.com/in/karthikeyan-manickavasagam-31661534/",
-      web: "https://yansorflow.wordpress.com/"
+      web: "https://karthiksolution.wordpress.com/",
+      bluesky: "https://bsky.app/profile/keyan16.bsky.social"
     }
   ]
 };
