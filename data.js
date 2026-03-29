@@ -1044,6 +1044,15 @@ const SUGData = {
       web: "https://meerannizar.wordpress.com/about-me/"
     },
     {
+      name: "Karthikeyan Manickavasagam",
+      role: "Core Committee Member",
+      title: "Sitecore Certified Professional & Main Organizer",
+      image: "images/team/KarthikeyanManickavasagam.jpg",
+      linkedin: "https://www.linkedin.com/in/karthikeyan-manickavasagam-31661534/",
+      web: "https://karthiksolution.wordpress.com/",
+      bluesky: "https://bsky.app/profile/keyan16.bsky.social"
+    },
+    {
       name: "Gopikrishna Reddy Gujjula",
       role: "SUG Advisor",
       title: "Sitecore MVP 2019",
@@ -1060,14 +1069,14 @@ const SUGData = {
     },
     {
       name: "Sujita Chandran",
-      role: "Core Committee Member",
+      role: "Committee Member",
       title: "Sitecore Certified Professional",
       image: "images/team/sujita.jpg",
       linkedin: "https://www.linkedin.com/in/sujita-chandran-0a30803b/"
     },
     {
       name: "Vinothini Durairaj",
-      role: "Member",
+      role: "Committee Member",
       title: "Sitecore Certified Professional",
       image: "images/team/vinothini.jpg",
       linkedin: "https://www.linkedin.com/in/vinothini-durairaj-27a4a979/"
@@ -1079,15 +1088,6 @@ const SUGData = {
       image: "images/team/vikash_raaj.jpg",
       linkedin: "https://www.linkedin.com/in/vikash-raaj/",
       twitter: "https://twitter.com/VIKASHRAAJB"
-    },
-    {
-      name: "Karthikeyan Manickavasagam",
-      role: "Committee Member & Organizer",
-      title: "Sitecore Certified Professional",
-      image: "images/team/KarthikeyanManickavasagam.jpg",
-      linkedin: "https://www.linkedin.com/in/karthikeyan-manickavasagam-31661534/",
-      web: "https://karthiksolution.wordpress.com/",
-      bluesky: "https://bsky.app/profile/keyan16.bsky.social"
     }
   ]
 };
