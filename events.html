@@ -308,6 +308,25 @@
         }).join(', ');
       }
       
+      // Build action buttons
+      let actionHTML = '';
+      if (!isPastEvent) {
+        const buttons = [];
+        if (event.meetingLink) {
+          buttons.push(`<a href="${event.meetingLink}" target="_blank" class="btn btn-primary">Join Now →</a>`);
+        }
+        if (event.registerLink) {
+          buttons.push(`<a href="${event.registerLink}" target="_blank" class="btn btn-primary">Register →</a>`);
+        }
+        if (buttons.length > 0) {
+          actionHTML = `<div class="event-action-buttons">${buttons.join('')}</div>`;
+        } else {
+          actionHTML = `<span style="color: var(--text-faint); font-size: 0.85rem;">No Registration</span>`;
+        }
+      } else {
+        actionHTML = `<span style="color: var(--text-faint); font-size: 0.85rem;">Completed</span>`;
+      }
+      
       return `
         <div class="event-item" data-status="${actualStatus}">
           <div class="event-date-block">
@@ -331,7 +350,7 @@
             </div>
           </div>
           <div class="event-action">
-            ${!isPastEvent && event.registerLink ? `<a href="${event.registerLink}" target="_blank" class="btn btn-primary">Register →</a>` : `<span style="color: var(--text-faint); font-size: 0.85rem;">${isPastEvent ? 'Completed' : 'No Registration'}</span>`}
+            ${actionHTML}
           </div>
         </div>
       `;

@@ -981,6 +981,25 @@ em { font-style: italic; color: var(--accent); }
 
 .event-action { flex-shrink: 0; padding-top: 2px; }
 
+.event-action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.event-action-buttons .btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .event-action-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* ---- ADMIN PAGE STYLES ---- */
 .admin-form {
   background: var(--surface);
@@ -1047,6 +1066,14 @@ em { font-style: italic; color: var(--accent); }
 
   .event-item { grid-template-columns: auto 1fr auto; }
   .form-row { grid-template-columns: 1fr; }
+}
+
+/* Desktop: Stack buttons vertically with equal width */
+@media (min-width: 901px) {
+  .event-action-buttons {
+    grid-template-columns: 1fr;
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 640px) {

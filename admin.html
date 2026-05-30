@@ -263,9 +263,15 @@
             <input type="text" id="ev-tags" placeholder="e.g. XM Cloud, SaaS, Composable"/>
           </div>
         </div>
-        <div class="form-group">
-          <label>Registration Link</label>
-          <input type="url" id="ev-register" placeholder="https://forms.gle/..."/>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Registration Link</label>
+            <input type="url" id="ev-register" placeholder="https://forms.gle/..."/>
+          </div>
+          <div class="form-group">
+            <label>Teams Meeting Link</label>
+            <input type="url" id="ev-meeting" placeholder="https://teams.microsoft.com/meet/..."/>
+          </div>
         </div>
         <button class="btn btn-primary" onclick="addEvent()">+ Add Event</button>
         <button class="btn btn-ghost" onclick="resetEventForm()" style="margin-left: 12px;">🔄 Clear Form</button>
@@ -539,6 +545,7 @@
       venue: document.getElementById('ev-venue').value.trim() || 'Online',
       description: desc,
       registerLink: document.getElementById('ev-register').value.trim(),
+      meetingLink: document.getElementById('ev-meeting').value.trim(),
       speakers: speakers,
       tags: document.getElementById('ev-tags').value.split(',').map(t => t.trim()).filter(Boolean),
       status: document.getElementById('ev-status').value
@@ -547,7 +554,7 @@
     adminEvents.unshift(newEvent);
     sessionStorage.setItem('admin_events', JSON.stringify(adminEvents));
     renderLists();
-    clearForm(['ev-title','ev-date','ev-time','ev-venue','ev-desc','ev-register','ev-speakers','ev-tags']);
+    clearForm(['ev-title','ev-date','ev-time','ev-venue','ev-desc','ev-register','ev-meeting','ev-speakers','ev-tags']);
     showToast('Event added!');
   }
 
@@ -729,7 +736,7 @@ if (typeof module !== 'undefined') module.exports = SUGData;`;
   }
 
   function resetEventForm() {
-    clearForm(['ev-title','ev-date','ev-time','ev-venue','ev-desc','ev-register','ev-speakers','ev-tags','ev-status']);
+    clearForm(['ev-title','ev-date','ev-time','ev-venue','ev-desc','ev-register','ev-meeting','ev-speakers','ev-tags','ev-status']);
     document.getElementById('ev-status').value = 'upcoming'; // Reset to default
     showToast('Event form cleared!');
   }
