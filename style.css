@@ -679,6 +679,22 @@ em { font-style: italic; color: var(--accent); }
   gap: 6px;
 }
 
+.upcoming-card-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.upcoming-card-buttons .btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
 /* ---- WEBINAR CARDS ---- */
 .webinar-grid {
   display: grid;
