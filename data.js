@@ -1,5 +1,5 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-05-30T17:25:42.111Z
+// GENERATED: 2026-06-12T21:00:42.844Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
@@ -707,6 +707,27 @@ const SUGData = {
 ],
 
   webinars: [
+  {
+    "id": "wmqbeuhfs",
+    "title": "From AI Suggestions to Secure Execution",
+    "date": "2026-06-12",
+    "time": "5:00 PM - 6:00 PM IST",
+    "duration": "58 mins",
+    "youtubeId": "HB-Hrq9stik",
+    "speakers": [
+      {
+        "name": "Amit Kumar",
+        "linkedin": "https://www.linkedin.com/in/kumaramitkumar/"
+      }
+    ],
+    "description": "How MCP and Sitecore Marketer MCP, Power Agentic AI in the Enterprise.",
+    "tags": [
+      "SitecoreAI",
+      "Sitecore Marketer MCP",
+      "Agentic AI"
+    ],
+    "status": "completed"
+  },
   {
     "id": "wmn51qttj",
     "title": "From JSS to Content SDK: Modernizing XM Cloud Development with Next.js App Router",
