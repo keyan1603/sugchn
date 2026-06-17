@@ -1,9 +1,32 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-06-12T21:00:42.844Z
+// GENERATED: 2026-06-17T03:19:34.194Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
   events: [
+  {
+    "id": "emqhi5e31",
+    "title": "SmartPages: AI-powered component matching tool for Sitecore Pages",
+    "date": "2026-06-26",
+    "time": "5:00 PM - 6:00 PM IST",
+    "venue": "Online",
+    "description": "SmartPages is an AI-powered tool that transforms Sitecore page creation by intelligently matching components with confidence scoring, visual previews, and secure browser-based execution.",
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    "meetingLink": "https://teams.microsoft.com/meet/48952560392193?p=zA7rUAn7wKwBNrE4gp",
+    "speakers": [
+      {
+        "name": "Yamini Punyavathi Muttevi",
+        "linkedin": "https://www.linkedin.com/in/yamini-punyavathi-muttevi-15514213a/"
+      }
+    ],
+    "tags": [
+      "SmartPages",
+      "AIComponentMatching",
+      "SitecoreInnovation",
+      "SitecoreAI"
+    ],
+    "status": "upcoming"
+  },
   {
     "id": "empsmg7qb",
     "title": "From AI Suggestions to Secure Execution",
@@ -11,7 +34,7 @@ const SUGData = {
     "time": "5:00 PM - 6:00 PM IST",
     "venue": "Online",
     "description": "How MCP and Sitecore Marketer MCP, Power Agentic AI in the Enterprise.",
-    "registerLink": "https://forms.gle/367UHdCedxhCTSmX6",
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
     "meetingLink": "https://teams.microsoft.com/meet/48751290508645?p=SXPK1vFCOJ9xBvLmKV",
     "speakers": [
       {
@@ -26,7 +49,7 @@ const SUGData = {
       "Copilot",
       "Agentic AI"
     ],
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "id": "emn51iz8r",
@@ -50,11 +73,11 @@ const SUGData = {
   },
   {
     "id": "emn51g9m4",
-    "title": "Using Sitecore AI Embedded Personalization with Content SDK",
+    "title": "Using SitecoreAI Embedded Personalization with Content SDK",
     "date": "2025-11-26",
     "time": "5:00 PM - 6:00 PM IST",
     "venue": "Online",
-    "description": "An overview of leveraging Sitecore AI personalization features through the Content SDK for tailored digital experiences.",
+    "description": "An overview of leveraging SitecoreAI personalization features through the Content SDK for tailored digital experiences.",
     "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
     "speakers": [
       {
@@ -67,7 +90,7 @@ const SUGData = {
       }
     ],
     "tags": [
-      "Sitecore AI",
+      "SitecoreAI",
       "Content SDK",
       "AIPersonalization"
     ],
@@ -112,7 +135,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 2,
@@ -133,7 +156,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 3,
@@ -154,7 +177,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 4,
@@ -175,7 +198,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 5,
@@ -196,7 +219,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 6,
@@ -217,7 +240,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 7,
@@ -238,7 +261,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 8,
@@ -259,7 +282,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 9,
@@ -280,7 +303,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 10,
@@ -301,7 +324,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 11,
@@ -322,7 +345,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 12,
@@ -343,7 +366,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 13,
@@ -364,7 +387,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 14,
@@ -385,7 +408,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 15,
@@ -407,7 +430,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 16,
@@ -429,7 +452,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 17,
@@ -450,7 +473,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 18,
@@ -471,7 +494,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 19,
@@ -492,7 +515,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 20,
@@ -513,7 +536,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 21,
@@ -534,7 +557,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 22,
@@ -556,7 +579,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 23,
@@ -577,7 +600,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 24,
@@ -598,7 +621,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 25,
@@ -619,7 +642,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 26,
@@ -640,7 +663,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 27,
@@ -661,7 +684,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 28,
@@ -682,7 +705,7 @@ const SUGData = {
       "Webinar"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   },
   {
     "id": 29,
@@ -702,7 +725,7 @@ const SUGData = {
       "Community"
     ],
     "status": "completed",
-    "registerLink": "https://forms.gle/mnNefUYWEunT3SGh9"
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8"
   }
 ],
 
@@ -750,7 +773,7 @@ const SUGData = {
   },
   {
     "id": "wmn51oz9n",
-    "title": "Using Sitecore AI Embedded Personalization with Content SDK",
+    "title": "Using SitecoreAI Embedded Personalization with Content SDK",
     "date": "2025-11-26",
     "time": "5:00 PM - 6:00 PM IST",
     "duration": "30 mins",
@@ -765,9 +788,9 @@ const SUGData = {
         "linkedin": "https://www.linkedin.com/in/debtanu-biswas-92287596/"
       }
     ],
-    "description": "An overview of leveraging Sitecore AI personalization features through the Content SDK for tailored digital experiences.",
+    "description": "An overview of leveraging SitecoreAI personalization features through the Content SDK for tailored digital experiences.",
     "tags": [
-      "Sitecore AI",
+      "SitecoreAI",
       "Content SDK",
       "AIPersonalization"
     ],
