@@ -1,5 +1,5 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-06-17T03:19:34.194Z
+// GENERATED: 2026-06-26T12:44:35.378Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
@@ -25,7 +25,7 @@ const SUGData = {
       "SitecoreInnovation",
       "SitecoreAI"
     ],
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "id": "empsmg7qb",
@@ -730,6 +730,28 @@ const SUGData = {
 ],
 
   webinars: [
+  {
+    "id": "wmquxatwj",
+    "title": "SmartPages: AI-powered component matching tool for Sitecore Pages",
+    "date": "2026-06-26",
+    "time": "5:00 PM - 6:00 PM IST",
+    "duration": "38 mins",
+    "youtubeId": "GDf1TlTpoZA",
+    "speakers": [
+      {
+        "name": "Yamini Punyavathi Muttevi",
+        "linkedin": "https://www.linkedin.com/in/yamini-punyavathi-muttevi-15514213a/"
+      }
+    ],
+    "description": "Discover how SmartPages transforms page creation through AI-assisted matching, confidence scoring, and visual previews. Learn how it enables rapid prototyping, migration, and client-ready presentations.",
+    "tags": [
+      "SmartPages",
+      "AIComponentMatching",
+      "SitecoreInnovation",
+      "SitecoreAI"
+    ],
+    "status": "completed"
+  },
   {
     "id": "wmqbeuhfs",
     "title": "From AI Suggestions to Secure Execution",
