@@ -1,9 +1,32 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-06-26T12:44:35.378Z
+// GENERATED: 2026-08-05T03:51:09.083Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
   events: [
+  {
+    "id": "emsfjus4f",
+    "title": "Sitecore Agentic Studio - From Architecture to Execution",
+    "date": "2026-08-15",
+    "time": "10:00 AM - 11:00 AM IST",
+    "venue": "Online",
+    "description": "Sitecore Agentic Studio empowers enterprises to design and operate intelligent agents by introducing key terminology, core elements, and practical workflows showing you how to create agents, understand their structure, and see them in action.",
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    "meetingLink": "https://teams.microsoft.com/meet/416106925214872?p=enYECTa1fYa2RLNGsH",
+    "speakers": [
+      {
+        "name": "Arvind Gehlot",
+        "linkedin": "https://www.linkedin.com/in/arvind-gehlot-5b0a614/"
+      }
+    ],
+    "tags": [
+      "AgenticStudio",
+      "AIWorkflows",
+      "ComposableDXP",
+      "SitecoreAI"
+    ],
+    "status": "upcoming"
+  },
   {
     "id": "emqhi5e31",
     "title": "SmartPages: AI-powered component matching tool for Sitecore Pages",
