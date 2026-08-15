@@ -309,7 +309,8 @@
       
       // Build action buttons
       let actionHTML = '';
-      if (!isPastEvent) {
+      // Hide action buttons when the event date is past or the status is explicitly 'completed'
+      if (!isPastEvent && event.status !== 'completed') {
         const buttons = [];
         if (event.meetingLink) {
           buttons.push(`<a href="${event.meetingLink}" target="_blank" class="btn btn-primary">Join Now →</a>`);
