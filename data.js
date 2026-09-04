@@ -1,9 +1,55 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-08-15T11:19:15.906Z
+// GENERATED: 2026-09-04T16:42:19.187Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
   events: [
+  {
+    "id": "emtn6lwnq",
+    "title": "Why Sitecore Content SDK App Router Is a Major Shift for Sitecore AI Developers",
+    "date": "2026-09-25",
+    "time": "5:00 PM - 6:00 PM IST",
+    "venue": "Online",
+    "description": "Sitecore Content SDK App Router brings a modern, developer-friendly approach to building headless experiences with Sitecore. In this session, we'll explore why it's a major shift for Sitecore AI developers, how it differs from the traditional Page Router, and how it enables faster, more flexible, and AI-ready digital experiences. We'll also cover key concepts, architecture, and real-world learnings to help you get started with confidence.",
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    "meetingLink": "https://teams.microsoft.com/meet/451936802583380?p=dbCcUZT6HTekN4MN8I",
+    "speakers": [
+      {
+        "name": "Jaya Jha",
+        "title": "Sitecore MVP",
+        "linkedin": "https://www.linkedin.com/in/jha-jaya/"
+      }
+    ],
+    "tags": [
+      "SitecoreAI",
+      "ContentSDK",
+      "ComposableDXP"
+    ],
+    "status": "upcoming"
+  },
+  {
+    "id": "emtn6ees8",
+    "title": "Scaling Semantic Search in Sitecore AI with Solr Dense Vectors and RAG",
+    "date": "2026-09-11",
+    "time": "5:00 PM - 6:00 PM IST",
+    "venue": "Online",
+    "description": "Demonstrates how semantic search powered by Solr dense vector fields and AI embeddings transforms content discovery in Sitecore AI, with a live demo of semantic relevance and a walkthrough of extending the architecture into AI Search with Retrieval-Augmented Generation (RAG).",
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    "meetingLink": "https://teams.microsoft.com/meet/475522210945559?p=oi65SvlI4iajoApWpU",
+    "speakers": [
+      {
+        "name": "Kamatchi Manoharan",
+        "linkedin": "https://www.linkedin.com/in/kamatchi-manoharan-b3770233/"
+      }
+    ],
+    "tags": [
+      "SemanticSearch",
+      "Solr",
+      "RAG",
+      "SitecoreAI"
+    ],
+    "status": "upcoming"
+  },
   {
     "id": "emsfjus4f",
     "title": "Sitecore Agentic Studio - From Architecture to Execution",
