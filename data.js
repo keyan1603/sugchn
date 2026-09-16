@@ -1,5 +1,5 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-09-04T16:42:19.187Z
+// GENERATED: 2026-09-16T17:35:16.099Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
@@ -48,7 +48,7 @@ const SUGData = {
       "RAG",
       "SitecoreAI"
     ],
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "id": "emsfjus4f",
@@ -799,6 +799,28 @@ const SUGData = {
 ],
 
   webinars: [
+  {
+    "id": "wmu4dsdqs",
+    "title": "Scaling Semantic Search in Sitecore AI with Solr Dense Vectors and RAG",
+    "date": "2026-09-11",
+    "time": "5:00 PM - 6:00 PM IST",
+    "duration": "49 mins",
+    "youtubeId": "P3Yc6H1GCMs",
+    "speakers": [
+      {
+        "name": "Kamatchi Manoharan",
+        "linkedin": "https://www.linkedin.com/in/kamatchi-manoharan-b3770233/"
+      }
+    ],
+    "description": "Demonstrates how semantic search powered by Solr dense vector fields and AI embeddings transforms content discovery in Sitecore AI, with a live demo of semantic relevance and a walkthrough of extending the architecture into AI Search with Retrieval-Augmented Generation (RAG).",
+    "tags": [
+      "SemanticSearch",
+      "Solr",
+      "RAG",
+      "SitecoreAI"
+    ],
+    "status": "completed"
+  },
   {
     "id": "wmsua9jb5",
     "title": "Sitecore Agentic Studio - From Architecture to Execution",
