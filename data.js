@@ -1,5 +1,5 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-09-16T17:35:16.099Z
+// GENERATED: 2026-09-26T15:15:04.963Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
@@ -25,7 +25,7 @@ const SUGData = {
       "ContentSDK",
       "ComposableDXP"
     ],
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "id": "emtn6ees8",
@@ -799,6 +799,28 @@ const SUGData = {
 ],
 
   webinars: [
+  {
+    "id": "wmuij6qa7",
+    "title": "Why Sitecore Content SDK App Router Is a Major Shift for Sitecore AI Developers",
+    "date": "2026-09-25",
+    "time": "5:00 PM - 6:00 PM IST",
+    "duration": "49 mins",
+    "youtubeId": "P-Vs1huKvvs",
+    "speakers": [
+      {
+        "name": "Jaya Jha",
+        "title": "Sitecore MVP",
+        "linkedin": "https://www.linkedin.com/in/jha-jaya/"
+      }
+    ],
+    "description": "Sitecore Content SDK App Router brings a modern, developer-friendly approach to building headless experiences with Sitecore. In this session, we'll explore why it's a major shift for Sitecore AI developers, how it differs from the traditional Page Router, and how it enables faster, more flexible, and AI-ready digital experiences. We'll also cover key concepts, architecture, and real-world learnings to help you get started with confidence.",
+    "tags": [
+      "SitecoreAI",
+      "ContentSDK",
+      "ComposableDXP"
+    ],
+    "status": "completed"
+  },
   {
     "id": "wmu4dsdqs",
     "title": "Scaling Semantic Search in Sitecore AI with Solr Dense Vectors and RAG",
