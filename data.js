@@ -1,9 +1,38 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-09-26T15:15:04.963Z
+// GENERATED: 2026-10-25T13:48:18.084Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
   events: [
+  {
+    "id": "emvnvutug",
+    "title": "From Content to Citations: Mastering AEO with SitecoreAI",
+    "date": "2026-10-30",
+    "time": "5:00 PM - 6:00 PM IST",
+    "venue": "Online",
+    "description": "The way customers discover information is shifting, from traditional search results to AI-generated answers. Answer Engine Optimization (AEO) is redefining how content gets surfaced, cited, and trusted by AI systems.",
+    "registerLink": "https://forms.gle/Ffnz8gtoyaacFeqo8",
+    "meetingLink": "https://teams.microsoft.com/meet/415882808273573?p=dGbsgQ8yejo0f3NiaD",
+    "speakers": [
+      {
+        "name": "Sakshi Khurana MD",
+        "title": "3x Sitecore Technology MVP",
+        "linkedin": "https://www.linkedin.com/in/sakshi-khurana-86318671/"
+      },
+      {
+        "name": "Anurag Bamboria",
+        "title": "Platform Architect, Johnson Controls",
+        "linkedin": "https://www.linkedin.com/in/anurag-bamboria-87768529/"
+      }
+    ],
+    "tags": [
+      "AEO",
+      "SitecoreAI",
+      "ContentStrategy",
+      "AIDiscovery"
+    ],
+    "status": "upcoming"
+  },
   {
     "id": "emtn6lwnq",
     "title": "Why Sitecore Content SDK App Router Is a Major Shift for Sitecore AI Developers",
