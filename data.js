@@ -1,5 +1,5 @@
 // SUG Chennai – Central Data Store
-// GENERATED: 2026-10-25T13:48:18.084Z
+// GENERATED: 2026-10-31T15:11:07.910Z
 // Edit via admin.html or modify directly
 
 const SUGData = {
@@ -31,7 +31,7 @@ const SUGData = {
       "ContentStrategy",
       "AIDiscovery"
     ],
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "id": "emtn6lwnq",
@@ -828,6 +828,34 @@ const SUGData = {
 ],
 
   webinars: [
+  {
+    "id": "wmvwjgh3b",
+    "title": "From Content to Citations: Mastering AEO with Sitecore AI",
+    "date": "2026-10-30",
+    "time": "5:00 PM - 6:00 PM IST",
+    "duration": "49",
+    "youtubeId": "ELBqrWLi-SQ",
+    "speakers": [
+      {
+        "name": "Sakshi Khurana MD",
+        "title": "3x Sitecore Technology MVP",
+        "linkedin": "https://www.linkedin.com/in/sakshi-khurana-86318671/"
+      },
+      {
+        "name": "Anurag Bamboria",
+        "title": "Platform Architect, Johnson Controls",
+        "linkedin": "https://www.linkedin.com/in/anurag-bamboria-87768529/"
+      }
+    ],
+    "description": "Customer discovery is shifting from search results to AI-generated answers. Explore how AEO can make SitecoreAI content more discoverable, understandable, and trusted across AI-driven experiences.",
+    "tags": [
+      "AEO",
+      "SitecoreAI",
+      "ContentStrategy",
+      "AIDiscovery"
+    ],
+    "status": "completed"
+  },
   {
     "id": "wmuij6qa7",
     "title": "Why Sitecore Content SDK App Router Is a Major Shift for Sitecore AI Developers",
